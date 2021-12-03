@@ -6,8 +6,7 @@ Here are my solutions for the [Advent of Code 2021](https://adventofcode.com/202
 
 The structure of this repo is as follows:
 
-- `/inputs/` - the inputs for each day
-- 'advent_of_code_2021.livemd' - Livebook notebook with the solutions
+- `advent_of_code_2021.livemd` - Livebook notebook with the solutions
 
 ## Running the code
 

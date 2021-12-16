@@ -4,21 +4,22 @@
 
 ## Index
 
-* [Day 1](#day-1)
-* [Day 2](#day-2)
-* [Day 3](#day-3)
-* [Day 4](#day-4)
-* [Day 5](#day-5)
-* [Day 6](#day-6)
-* [Day 7](#day-7)
-* [Day 8](#day-8)
-* [Day 9](#day-9)
-* [Day 10](#day-10)
-* [Day 11](#day-11)
-* [Day 12](#day-12)
-* [Day 13](#day-13)
-* [Day 14](#day-14)
-* [Day 15](#day-15)
+* [Day 1](#day-1:-sonar-sweep)
+* [Day 2](#day-2:-dive!)
+* [Day 3](#day-3:-binary-diagnostic)
+* [Day 4](#day-4:-giant-squid)
+* [Day 5](#day-5:-hydrothermal-venture)
+* [Day 6](#day-6:-lanternfish)
+* [Day 7](#day-7:-the-treachery-of-whales)
+* [Day 8](#day-8:-seven-segment-search)
+* [Day 9](#day-9:-smoke-basin)
+* [Day 10](#day-10:-syntax-scoring)
+* [Day 11](#day-11:-dumbo-octopus)
+* [Day 12](#day-12:-passage-pathing)
+* [Day 13](#day-13:-transparent-origami)
+* [Day 14](#day-14:-extended-polymerization)
+* [Day 15](#day-15:-chiton)
+* [Day 16](#day-16:-packet-decoder)
 
 ## Instructions
 
@@ -27,7 +28,8 @@ Mix.install([
   :req,
   {:kino, github: "livebook-dev/kino"},
   :vega_lite,
-  {:nx, "~> 0.1.0-dev", github: "elixir-nx/nx", sparse: "nx"}
+  {:nx, "~> 0.1.0-dev", github: "elixir-nx/nx", sparse: "nx"},
+  :priority_queue
 ])
 ```
 
@@ -103,7 +105,9 @@ import Utils, except: [start_inputs_cache!: 0]
 require Integer
 ```
 
-## Day 1
+<!-- livebook:{"branch_parent_index":1} -->
+
+## Day 1: Sonar Sweep
 
 You're minding your own business on a ship at sea when the overboard alarm goes off! You rush to see if you can help. Apparently, one of the Elves tripped and accidentally sent the sleigh keys flying into the ocean!
 
@@ -217,7 +221,9 @@ input_for_day!(1)
 |> Enum.count()
 ```
 
-## Day 2
+<!-- livebook:{"branch_parent_index":1} -->
+
+## Day 2: Dive!
 
 Now, you need to figure out how to pilot this thing.
 
@@ -318,7 +324,9 @@ initial_state = {0, 0, 0}
 final_depth * final_horizontal
 ```
 
-## Day 3
+<!-- livebook:{"branch_parent_index":1} -->
+
+## Day 3: Binary Diagnostic
 
 The submarine has been making some odd creaking noises, so you ask it to produce a diagnostic report just in case.
 
@@ -497,7 +505,9 @@ co2_scrubber_rating = Day3Part2.find_rating(parsed_input, false)
 oxigen_generator_rating * co2_scrubber_rating
 ```
 
-## Day 4
+<!-- livebook:{"branch_parent_index":1} -->
+
+## Day 4: Giant Squid
 
 You're already almost 1.5km (almost a mile) below the surface of the ocean, already so deep that you can't see any sunlight. What you can see, however, is a giant squid that has attached itself to the outside of your submarine.
 
@@ -675,7 +685,9 @@ last_board
 |> Kernel.*(last_number)
 ```
 
-## Day 5
+<!-- livebook:{"branch_parent_index":1} -->
+
+## Day 5: Hydrothermal Venture
 
 You come across a field of hydrothermal vents on the ocean floor! These vents constantly produce large, opaque clouds, so it would be best to avoid them if possible.
 
@@ -791,7 +803,9 @@ end)
 |> Enum.count(fn {_point, count} -> count >= 2 end)
 ```
 
-## Day 6
+<!-- livebook:{"branch_parent_index":1} -->
+
+## Day 6: Lanternfish
 
 The sea floor is getting steeper. Maybe the sleigh keys got carried this way?
 
@@ -903,7 +917,9 @@ end)
 |> Enum.sum()
 ```
 
-## Day 7
+<!-- livebook:{"branch_parent_index":1} -->
+
+## Day 7: The Treachery of Whales
 
 A giant whale has decided your submarine is its next meal, and it's much faster than you are. There's nowhere to run!
 
@@ -1034,7 +1050,9 @@ end)
 |> Enum.min()
 ```
 
-## Day 8
+<!-- livebook:{"branch_parent_index":1} -->
+
+## Day 8: Seven Segment Search
 
 You barely reach the safety of the cave when the whale smashes into the cave mouth, collapsing it. Sensors indicate another exit to this cave at a much greater depth, so you have no choice but to press on.
 
@@ -1279,7 +1297,9 @@ end)
 |> Enum.sum()
 ```
 
-## Day 9
+<!-- livebook:{"branch_parent_index":1} -->
+
+## Day 9: Smoke Basin
 
 These caves seem to be lava tubes. Parts are even still volcanically active; small hydrothermal vents release smoke into the caves that slowly settles like rain.
 
@@ -1440,7 +1460,9 @@ map
 |> Enum.product()
 ```
 
-## Day 10
+<!-- livebook:{"branch_parent_index":1} -->
+
+## Day 10: Syntax Scoring
 
 You ask the submarine to determine the best route out of the deep-sea cave, but it only replies:
 
@@ -1608,7 +1630,9 @@ end)
 end)
 ```
 
-## Day 11
+<!-- livebook:{"branch_parent_index":1} -->
+
+## Day 11: Dumbo Octopus
 
 You enter a large cavern full of rare bioluminescent dumbo octopuses! They seem to not like the Christmas lights on your submarine, so you turn them off for now.
 
@@ -2089,7 +2113,9 @@ end)
 |> Day11Part2.find_first_full_flash(0)
 ```
 
-## Day 12
+<!-- livebook:{"branch_parent_index":1} -->
+
+## Day 12: Passage Pathing
 
 With your submarine's subterranean subsystems subsisting suboptimally, the only way you're getting out of this cave anytime soon is by finding a path yourself. Not just a path - the only way to know if you've found the best path is to find all of them.
 
@@ -2349,7 +2375,9 @@ end)
 |> Enum.count()
 ```
 
-## Day 13
+<!-- livebook:{"branch_parent_index":1} -->
+
+## Day 13: Transparent Origami
 
 You reach another volcanically active part of the cave. It would be nice if you could do some kind of thermal imaging so you could tell ahead of time which caves are too hot to safely enter.
 
@@ -2566,7 +2594,9 @@ instructions
 |> Day13Part2.render()
 ```
 
-## Day 14
+<!-- livebook:{"branch_parent_index":1} -->
+
+## Day 14: Extended Polymerization
 
 The incredible pressures at this depth are starting to put a strain on your submarine. The submarine has polymerization equipment that would produce suitable materials to reinforce the submarine, and the nearby volcanically-active caves should even have the necessary input elements in sufficient quantities.
 
@@ -2711,6 +2741,626 @@ Apply 40 steps of pair insertion to the polymer template and find the most and l
 Day14.run_simulation(start_pair_counts, rules, 40)
 ```
 
-## Day 15
+<!-- livebook:{"branch_parent_index":1} -->
 
-TBD
+## Day 15: Chiton
+
+You've almost reached the exit of the cave, but the walls are getting closer together. Your submarine can barely still fit, though; the main problem is that the walls of the cave are covered in chitons, and it would be best not to bump any of them.
+
+The cavern is large, but has a very low ceiling, restricting your motion to two dimensions. The shape of the cavern resembles a square; a quick scan of chiton density produces a map of risk level throughout the cave (your puzzle input). For example:
+
+```elixir
+day_15_test_input = """
+1163751742
+1381373672
+2136511328
+3694931569
+7463417111
+1319128137
+1359912421
+3125421639
+1293138521
+2311944581
+"""
+```
+
+You start in the top left position, your destination is the bottom right position, and you cannot move diagonally. The number at each position is its risk level; to determine the total risk of an entire path, add up the risk levels of each position you enter (that is, don't count the risk level of your starting position unless you enter it; leaving it adds no risk to your total).
+
+Your goal is to find a path with the lowest total risk. In this example, a path with the lowest total risk is highlighted here:
+
+```
+1163751742
+1381373672
+2136511328
+3694931569
+7463417111
+1319128137
+1359912421
+3125421639
+1293138521
+2311944581
+```
+
+The total risk of this path is `40` (the starting position is never entered, so its risk is not counted).
+
+What is the lowest total risk of any path from the top left to the bottom right?
+
+```elixir
+defmodule Day15 do
+  # shamelessly taken from https://en.wikipedia.org/wiki/A*_search_algorithm#Pseudocode
+  def shortest_path(graph, start, dest) do
+    open_set = PriorityQueue.new() |> PriorityQueue.put(0, start)
+    came_from = Map.new()
+    score = %{start => 0}
+
+    shortest_path(graph, dest, open_set, came_from, score)
+  end
+
+  defp shortest_path(graph, dest, open_set, came_from, score) do
+    {{current_score, current}, open_set} = PriorityQueue.pop!(open_set)
+
+    if current == dest do
+      reconstruct_path(came_from, current, [])
+    else
+      {open_set, came_from, score} =
+        graph
+        |> neighbors(current)
+        |> Enum.reduce(
+          {open_set, came_from, score},
+          fn neighbor, {open_set, came_from, score} ->
+            tentative_score = current_score + cost(graph, neighbor)
+
+            if tentative_score < Map.get(score, neighbor, :inf) do
+              open_set = PriorityQueue.put(open_set, tentative_score, neighbor)
+              came_from = Map.put(came_from, neighbor, current)
+              score = Map.put(score, neighbor, tentative_score)
+
+              {open_set, came_from, score}
+            else
+              {open_set, came_from, score}
+            end
+          end
+        )
+
+      shortest_path(graph, dest, open_set, came_from, score)
+    end
+  end
+
+  defp reconstruct_path(came_from, current, path) do
+    case Map.fetch(came_from, current) do
+      {:ok, new_current} -> reconstruct_path(came_from, new_current, [current | path])
+      :error -> [current | path]
+    end
+  end
+
+  defp neighbors(graph, {vertex_x, vertex_y} = vertex) do
+    for x <- (vertex_x - 1)..(vertex_x + 1),
+        x in 0..graph.max_x,
+        y <- (vertex_y - 1)..(vertex_y + 1),
+        y in 0..graph.max_y,
+        x == vertex_x or y == vertex_y,
+        {x, y} != vertex,
+        do: {x, y}
+  end
+
+  defp cost(graph, neighbor) do
+    Map.fetch!(graph.vertices, neighbor)
+  end
+end
+```
+
+```elixir
+all_vertices =
+  input_for_day!(15)
+  |> lines()
+  |> Enum.with_index()
+  |> Enum.flat_map(fn {line, y} ->
+    line
+    |> String.graphemes()
+    |> Enum.map(&String.to_integer/1)
+    |> Enum.with_index()
+    |> Enum.map(fn {weight, x} ->
+      {{x, y}, weight}
+    end)
+  end)
+
+{{max_x, max_y}, _} = List.last(all_vertices)
+
+vertices_map = Map.new(all_vertices)
+
+graph = %{
+  vertices: vertices_map,
+  max_x: max_x,
+  max_y: max_y
+}
+
+graph
+|> Day15.shortest_path({0, 0}, {max_x, max_y})
+|> tl()
+|> Enum.map(&Map.fetch!(vertices_map, &1))
+|> Enum.sum()
+```
+
+### Part 2
+
+Now that you know how to find low-risk paths in the cave, you can try to find your way out.
+
+The entire cave is actually five times larger in both dimensions than you thought; the area you originally scanned is just one tile in a 5x5 tile area that forms the full map. Your original map tile repeats to the right and downward; each time the tile repeats to the right or downward, all of its risk levels are 1 higher than the tile immediately up or left of it. However, risk levels above 9 wrap back around to 1. So, if your original map had some position with a risk level of 8, then that same position on each of the 25 total tiles would be as follows:
+
+```
+8 9 1 2 3
+9 1 2 3 4
+1 2 3 4 5
+2 3 4 5 6
+3 4 5 6 7
+```
+
+Each single digit above corresponds to the example position with a value of 8 on the top-left tile. Because the full map is actually five times larger in both dimensions, that position appears a total of 25 times, once in each duplicated tile, with the values shown above.
+
+Here is the full five-times-as-large version of the first example above, with the original map in the top left corner highlighted:
+
+```
+11637517422274862853338597396444961841755517295286
+13813736722492484783351359589446246169155735727126
+21365113283247622439435873354154698446526571955763
+36949315694715142671582625378269373648937148475914
+74634171118574528222968563933317967414442817852555
+13191281372421239248353234135946434524615754563572
+13599124212461123532357223464346833457545794456865
+31254216394236532741534764385264587549637569865174
+12931385212314249632342535174345364628545647573965
+23119445813422155692453326671356443778246755488935
+22748628533385973964449618417555172952866628316397
+24924847833513595894462461691557357271266846838237
+32476224394358733541546984465265719557637682166874
+47151426715826253782693736489371484759148259586125
+85745282229685639333179674144428178525553928963666
+24212392483532341359464345246157545635726865674683
+24611235323572234643468334575457944568656815567976
+42365327415347643852645875496375698651748671976285
+23142496323425351743453646285456475739656758684176
+34221556924533266713564437782467554889357866599146
+33859739644496184175551729528666283163977739427418
+35135958944624616915573572712668468382377957949348
+43587335415469844652657195576376821668748793277985
+58262537826937364893714847591482595861259361697236
+96856393331796741444281785255539289636664139174777
+35323413594643452461575456357268656746837976785794
+35722346434683345754579445686568155679767926678187
+53476438526458754963756986517486719762859782187396
+34253517434536462854564757396567586841767869795287
+45332667135644377824675548893578665991468977611257
+44961841755517295286662831639777394274188841538529
+46246169155735727126684683823779579493488168151459
+54698446526571955763768216687487932779859814388196
+69373648937148475914825958612593616972361472718347
+17967414442817852555392896366641391747775241285888
+46434524615754563572686567468379767857948187896815
+46833457545794456865681556797679266781878137789298
+64587549637569865174867197628597821873961893298417
+45364628545647573965675868417678697952878971816398
+56443778246755488935786659914689776112579188722368
+55172952866628316397773942741888415385299952649631
+57357271266846838237795794934881681514599279262561
+65719557637682166874879327798598143881961925499217
+71484759148259586125936169723614727183472583829458
+28178525553928963666413917477752412858886352396999
+57545635726865674683797678579481878968159298917926
+57944568656815567976792667818781377892989248891319
+75698651748671976285978218739618932984172914319528
+56475739656758684176786979528789718163989182927419
+67554889357866599146897761125791887223681299833479
+```
+
+Equipped with the full map, you can now find a path from the top left corner to the bottom right corner with the lowest total risk:
+
+```
+11637517422274862853338597396444961841755517295286
+13813736722492484783351359589446246169155735727126
+21365113283247622439435873354154698446526571955763
+36949315694715142671582625378269373648937148475914
+74634171118574528222968563933317967414442817852555
+13191281372421239248353234135946434524615754563572
+13599124212461123532357223464346833457545794456865
+31254216394236532741534764385264587549637569865174
+12931385212314249632342535174345364628545647573965
+23119445813422155692453326671356443778246755488935
+22748628533385973964449618417555172952866628316397
+24924847833513595894462461691557357271266846838237
+32476224394358733541546984465265719557637682166874
+47151426715826253782693736489371484759148259586125
+85745282229685639333179674144428178525553928963666
+24212392483532341359464345246157545635726865674683
+24611235323572234643468334575457944568656815567976
+42365327415347643852645875496375698651748671976285
+23142496323425351743453646285456475739656758684176
+34221556924533266713564437782467554889357866599146
+33859739644496184175551729528666283163977739427418
+35135958944624616915573572712668468382377957949348
+43587335415469844652657195576376821668748793277985
+58262537826937364893714847591482595861259361697236
+96856393331796741444281785255539289636664139174777
+35323413594643452461575456357268656746837976785794
+35722346434683345754579445686568155679767926678187
+53476438526458754963756986517486719762859782187396
+34253517434536462854564757396567586841767869795287
+45332667135644377824675548893578665991468977611257
+44961841755517295286662831639777394274188841538529
+46246169155735727126684683823779579493488168151459
+54698446526571955763768216687487932779859814388196
+69373648937148475914825958612593616972361472718347
+17967414442817852555392896366641391747775241285888
+46434524615754563572686567468379767857948187896815
+46833457545794456865681556797679266781878137789298
+64587549637569865174867197628597821873961893298417
+45364628545647573965675868417678697952878971816398
+56443778246755488935786659914689776112579188722368
+55172952866628316397773942741888415385299952649631
+57357271266846838237795794934881681514599279262561
+65719557637682166874879327798598143881961925499217
+71484759148259586125936169723614727183472583829458
+28178525553928963666413917477752412858886352396999
+57545635726865674683797678579481878968159298917926
+57944568656815567976792667818781377892989248891319
+75698651748671976285978218739618932984172914319528
+56475739656758684176786979528789718163989182927419
+67554889357866599146897761125791887223681299833479
+```
+
+The total risk of this path is `315` (the starting position is still never entered, so its risk is not counted).
+
+Using the full map, what is the lowest total risk of any path from the top left to the bottom right?
+
+```elixir
+all_vertices =
+  input_for_day!(15)
+  |> lines()
+  |> Enum.with_index()
+  |> Enum.flat_map(fn {line, y} ->
+    line
+    |> String.graphemes()
+    |> Enum.map(&String.to_integer/1)
+    |> Enum.with_index()
+    |> Enum.map(fn {weight, x} ->
+      {{x, y}, weight}
+    end)
+  end)
+
+{{x_per_tile, y_per_tile}, _} = List.last(all_vertices)
+
+all_vertices =
+  for x <- 1..5,
+      y <- 1..5,
+      to_add = x + y - 2,
+      {{vertex_x, vertex_y}, weight} <- all_vertices,
+      new_weight = rem(weight + to_add - 1, 9) + 1,
+      new_vertex_x = vertex_x + (x_per_tile + 1) * (x - 1),
+      new_vertex_y = vertex_y + (y_per_tile + 1) * (y - 1),
+      do: {{new_vertex_x, new_vertex_y}, new_weight}
+
+{{max_x, max_y}, _} = List.last(all_vertices)
+
+vertices_map = Map.new(all_vertices)
+
+graph = %{
+  vertices: vertices_map,
+  max_x: max_x,
+  max_y: max_y
+}
+
+graph
+|> Day15.shortest_path({0, 0}, {max_x, max_y})
+|> tl()
+|> Enum.map(&Map.fetch!(vertices_map, &1))
+|> Enum.sum()
+```
+
+<!-- livebook:{"branch_parent_index":1} -->
+
+## Day 16: Packet Decoder
+
+As you leave the cave and reach open waters, you receive a transmission from the Elves back on the ship.
+
+The transmission was sent using the Buoyancy Interchange Transmission System (BITS), a method of packing numeric expressions into a binary sequence. Your submarine's computer has saved the transmission in hexadecimal (your puzzle input).
+
+The first step of decoding the message is to convert the hexadecimal representation into binary. Each character of hexadecimal corresponds to four bits of binary data:
+
+```
+0 = 0000
+1 = 0001
+2 = 0010
+3 = 0011
+4 = 0100
+5 = 0101
+6 = 0110
+7 = 0111
+8 = 1000
+9 = 1001
+A = 1010
+B = 1011
+C = 1100
+D = 1101
+E = 1110
+F = 1111
+```
+
+The BITS transmission contains a single packet at its outermost layer which itself contains many other packets. The hexadecimal representation of this packet might encode a few extra `0` bits at the end; these are not part of the transmission and should be ignored.
+
+Every packet begins with a standard header: the first three bits encode the packet version, and the next three bits encode the packet type ID. These two values are numbers; all numbers encoded in any packet are represented as binary with the most significant bit first. For example, a version encoded as the binary sequence `100` represents the number `4`.
+
+Packets with type ID `4` represent a literal value. Literal value packets encode a single binary number. To do this, the binary number is padded with leading zeroes until its length is a multiple of four bits, and then it is broken into groups of four bits. Each group is prefixed by a `1` bit except the last group, which is prefixed by a `0` bit. These groups of five bits immediately follow the packet header. For example, the hexadecimal string `D2FE28` becomes:
+
+```
+110100101111111000101000
+VVVTTTAAAAABBBBBCCCCC
+```
+
+Below each bit is a label indicating its purpose:
+
+* The three bits labeled `V` (`110`) are the packet version, `6`.
+* The three bits labeled `T` (`100`) are the packet type ID, `4`, which means the packet is a literal value.
+* The five bits labeled `A` (`10111`) start with a `1` (not the last group, keep reading) and contain the first four bits of the number, `0111`.
+* The five bits labeled `B` (`11110`) start with a `1` (not the last group, keep reading) and contain four more bits of the number, `1110`.
+* The five bits labeled `C` (`00101`) start with a `0` (last group, end of packet) and contain the last four bits of the number, `0101`.
+* The three unlabeled `0` bits at the end are extra due to the hexadecimal representation and should be ignored.
+
+So, this packet represents a literal value with binary representation `011111100101`, which is `2021` in decimal.
+
+Every other type of packet (any packet with a type ID other than `4`) represent an operator that performs some calculation on one or more sub-packets contained within. Right now, the specific operations aren't important; focus on parsing the hierarchy of sub-packets.
+
+An operator packet contains one or more packets. To indicate which subsequent binary data represents its sub-packets, an operator packet can use one of two modes indicated by the bit immediately after the packet header; this is called the length type ID:
+
+* If the length type ID is `0`, then the next 15 bits are a number that represents the total length in bits of the sub-packets contained by this packet.
+* If the length type ID is `1`, then the next 11 bits are a number that represents the number of sub-packets immediately contained by this packet.
+
+Finally, after the length type ID bit and the 15-bit or 11-bit field, the sub-packets appear.
+
+For example, here is an operator packet (hexadecimal string `38006F45291200`) with length type ID `0` that contains two sub-packets:
+
+```
+00111000000000000110111101000101001010010001001000000000
+VVVTTTILLLLLLLLLLLLLLLAAAAAAAAAAABBBBBBBBBBBBBBBB
+```
+
+* The three bits labeled `V` (`001`) are the packet version, `1`.
+* The three bits labeled `T` (`110`) are the packet type ID, `6`, which means the packet is an operator.
+* The bit labeled `I` (`0`) is the length type ID, which indicates that the length is a 15-bit number representing the number of bits in the sub-packets.
+* The 15 bits labeled `L` (`000000000011011`) contain the length of the sub-packets in bits, `27`.
+* The 11 bits labeled `A` contain the first sub-packet, a literal value representing the number `10`.
+* The 16 bits labeled `B` contain the second sub-packet, a literal value representing the number `20`.
+
+After reading `11` and `16` bits of sub-packet data, the total length indicated in `L` (`27`) is reached, and so parsing of this packet stops.
+
+As another example, here is an operator packet (hexadecimal string `EE00D40C823060`) with length type ID `1` that contains three sub-packets:
+
+```
+11101110000000001101010000001100100000100011000001100000
+VVVTTTILLLLLLLLLLLAAAAAAAAAAABBBBBBBBBBBCCCCCCCCCCC
+```
+
+* The three bits labeled `V` (`111`) are the packet version, `7`.
+* The three bits labeled `T` (`011`) are the packet type ID, `3`, which means the packet is an operator.
+* The bit labeled `I` (`1`) is the length type ID, which indicates that the length is a 11-bit number representing the number of sub-packets.
+* The 11 bits labeled `L` (`00000000011`) contain the number of sub-packets, `3`.
+* The 11 bits labeled `A` contain the first sub-packet, a literal value representing the number `1`.
+* The 11 bits labeled `B` contain the second sub-packet, a literal value representing the number `2`.
+* The 11 bits labeled `C` contain the third sub-packet, a literal value representing the number `3`.
+
+After reading 3 complete sub-packets, the number of sub-packets indicated in L (`3`) is reached, and so parsing of this packet stops.
+
+### Part 1
+
+For now, parse the hierarchy of the packets throughout the transmission and add up all of the version numbers.
+
+Here are a few more examples of hexadecimal-encoded transmissions:
+
+* `8A004A801A8002F478` represents an operator packet (version `4`) which contains an operator packet (version `1`) which contains an operator packet (version `5`) which contains a literal value (version `6`); this packet has a version sum of `16`.
+* `620080001611562C8802118E34` represents an operator packet (version `3`) which contains two sub-packets; each sub-packet is an operator packet that contains two literal values. This packet has a version sum of `12`.
+* `C0015000016115A2E0802F182340` has the same structure as the previous example, but the outermost packet uses a different length type ID. This packet has a version sum of `23`.
+* `A0016C880162017C3686B18A3D4780` is an operator packet that contains an operator packet that contains an operator packet that contains five literal values; it has a version sum of `31`.
+
+Decode the structure of your hexadecimal-encoded BITS transmission; what do you get if you add up the version numbers in all packets?
+
+```elixir
+day_16_test_input_part_1 = """
+D2FE28
+38006F45291200
+EE00D40C823060
+8A004A801A8002F478
+620080001611562C8802118E34
+C0015000016115A2E0802F182340
+A0016C880162017C3686B18A3D4780
+"""
+```
+
+```elixir
+defmodule Day16 do
+  def packet_to_binary(packet) do
+    for <<char::utf8 <- packet>>, into: "", do: char_to_binary(<<char>>)
+  end
+
+  def parse_packet(packet) do
+    {parsed, _rest} =
+      packet
+      |> packet_to_binary()
+      |> do_parse_packet()
+
+    parsed
+  end
+
+  defp do_parse_packet(<<version::3, 4::3, rest::bitstring>>) do
+    {value, rest} = parse_value(rest)
+
+    {{:value, version, value}, rest}
+  end
+
+  defp do_parse_packet(<<version::3, type::3, 0::1, subpackets_length::15, rest::bitstring>>) do
+    {subpackets, rest} =
+      parse_subpackets_until(rest, subpackets_length, fn remaining_length, parsed_bits ->
+        if remaining_length == parsed_bits,
+          do: :halt,
+          else: {:cont, remaining_length - parsed_bits}
+      end)
+
+    {{:operator, version, type, subpackets}, rest}
+  end
+
+  defp do_parse_packet(<<version::3, type::3, 1::1, subpackets_count::11, rest::bitstring>>) do
+    {subpackets, rest} =
+      parse_subpackets_until(rest, subpackets_count, fn remaining_count, _parsed_bits ->
+        if remaining_count == 1,
+          do: :halt,
+          else: {:cont, remaining_count - 1}
+      end)
+
+    {{:operator, version, type, subpackets}, rest}
+  end
+
+  defp parse_value(bitstring), do: parse_value(bitstring, [])
+
+  defp parse_value(<<1::1, value::4, rest::bitstring>>, acc) do
+    parse_value(rest, [value | acc])
+  end
+
+  defp parse_value(<<0::1, value::4, rest::bitstring>>, acc) do
+    value =
+      [value | acc]
+      |> Enum.reverse()
+      |> Integer.undigits(16)
+
+    {value, rest}
+  end
+
+  defp parse_subpackets_until(bitstring, acc, fun) do
+    parse_subpackets_until(bitstring, acc, fun, [])
+  end
+
+  defp parse_subpackets_until(bitstring, acc, fun, parsed) do
+    {subpacket, rest} = do_parse_packet(bitstring)
+    parsed = [subpacket | parsed]
+
+    case fun.(acc, bit_size(bitstring) - bit_size(rest)) do
+      {:cont, acc} -> parse_subpackets_until(rest, acc, fun, parsed)
+      :halt -> {Enum.reverse(parsed), rest}
+    end
+  end
+
+  for {char, value} <- Enum.with_index(~w[0 1 2 3 4 5 6 7 8 9 A B C D E F]) do
+    defp char_to_binary(unquote(char)), do: <<unquote(value)::4>>
+  end
+end
+
+defmodule Day16Part1 do
+  def sum_versions({:value, version, _value}), do: version
+
+  def sum_versions({:operator, version, _type, subpackets}) do
+    Enum.sum([version | Enum.map(subpackets, &sum_versions/1)])
+  end
+end
+```
+
+```elixir
+input_for_day!(16)
+|> lines()
+|> Enum.map(&Day16.parse_packet/1)
+|> Enum.map(&Day16Part1.sum_versions/1)
+```
+
+### Part 2
+
+Now that you have the structure of your transmission decoded, you can calculate the value of the expression it represents.
+
+Literal values (type ID `4`) represent a single number as described above. The remaining type IDs are more interesting:
+
+* Packets with type ID `0` are sum packets - their value is the sum of the values of their sub-packets. If they only have a single sub-packet, their value is the value of the sub-packet.
+* Packets with type ID `1` are product packets - their value is the result of multiplying together the values of their sub-packets. If they only have a single sub-packet, their value is the value of the sub-packet.
+* Packets with type ID `2` are minimum packets - their value is the minimum of the values of their sub-packets.
+* Packets with type ID `3` are maximum packets - their value is the maximum of the values of their sub-packets.
+* Packets with type ID `5` are greater than packets - their value is 1 if the value of the first sub-packet is greater than the value of the second sub-packet; otherwise, their value is 0. These packets always have exactly two sub-packets.
+* Packets with type ID `6` are less than packets - their value is 1 if the value of the first sub-packet is less than the value of the second sub-packet; otherwise, their value is 0. These packets always have exactly two sub-packets.
+* Packets with type ID `7` are equal to packets - their value is 1 if the value of the first sub-packet is equal to the value of the second sub-packet; otherwise, their value is 0. These packets always have exactly two sub-packets.
+
+Using these rules, you can now work out the value of the outermost packet in your BITS transmission.
+
+For example:
+
+* `C200B40A82` finds the sum of `1` and `2`, resulting in the value `3`.
+* `04005AC33890` finds the product of `6` and `9`, resulting in the value `54`.
+* `880086C3E88112` finds the minimum of `7`, `8`, and `9`, resulting in the value `7`.
+* `CE00C43D881120` finds the maximum of `7`, `8`, and `9`, resulting in the value `9`.
+* `D8005AC2A8F0` produces `1`, because `5` is less than `15`.
+* `F600BC2D8F` produces `0`, because `5` is not greater than `15`.
+* `9C005AC2F8F0` produces `0`, because `5` is not equal to `15`.
+* `9C0141080250320F1802104A08` produces `1`, because `1 + 3 = 2 * 2`.
+
+What do you get if you evaluate the expression represented by your hexadecimal-encoded BITS transmission?
+
+```elixir
+day_16_test_input_part_2 = """
+C200B40A82
+04005AC33890
+880086C3E88112
+CE00C43D881120
+D8005AC2A8F0
+F600BC2D8F
+9C005AC2F8F0
+9C0141080250320F1802104A08
+"""
+```
+
+```elixir
+defmodule Day16Part2 do
+  @sum 0
+  @product 1
+  @min 2
+  @max 3
+  @greater_than 5
+  @less_than 6
+  @equal 7
+
+  def eval({:value, _vsn, value}), do: value
+
+  def eval({:operator, _vsn, @sum, subpackets}) do
+    subpackets
+    |> Enum.map(&eval/1)
+    |> Enum.sum()
+  end
+
+  def eval({:operator, _vsn, @product, subpackets}) do
+    subpackets
+    |> Enum.map(&eval/1)
+    |> Enum.product()
+  end
+
+  def eval({:operator, _vsn, @min, subpackets}) do
+    subpackets
+    |> Enum.map(&eval/1)
+    |> Enum.min()
+  end
+
+  def eval({:operator, _vsn, @max, subpackets}) do
+    subpackets
+    |> Enum.map(&eval/1)
+    |> Enum.max()
+  end
+
+  def eval({:operator, _vsn, @greater_than, [packet1, packet2]}) do
+    if eval(packet1) > eval(packet2), do: 1, else: 0
+  end
+
+  def eval({:operator, _vsn, @less_than, [packet1, packet2]}) do
+    if eval(packet1) < eval(packet2), do: 1, else: 0
+  end
+
+  def eval({:operator, _vsn, @equal, [packet1, packet2]}) do
+    if eval(packet1) == eval(packet2), do: 1, else: 0
+  end
+end
+```
+
+```elixir
+input_for_day!(16)
+|> lines()
+|> Enum.map(&Day16.parse_packet/1)
+|> Enum.map(&Day16Part2.eval/1)
+```
